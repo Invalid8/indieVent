@@ -263,7 +263,7 @@ header .nav-header{
 	}
 	
 	.nav-header .nav-links ul {
-		line-height: 30px;
+		line-height: 90px;
 	}
 	
 	.banner {
@@ -278,6 +278,14 @@ header .nav-header{
 }
 
 @media screen and (max-height: 640px) {
+	.nav-header .nav-links{
+		height: 100vh;
+	}
+
+	.nav-header .nav-links ul {
+		line-height: 100%;
+	}
+	
 	.banner {
 		min-height: calc(600px + 20vmax);
 	}
