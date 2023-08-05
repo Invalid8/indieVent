@@ -137,6 +137,7 @@ header .nav-header{
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 1000;
 }
 
 .nav-header .logo {
@@ -208,6 +209,7 @@ header .nav-header{
 
 .banner .side2 img{ 
 	border-radius: 8px;
+	z-index: 100;
 }
 
 /** END **/
@@ -263,7 +265,7 @@ header .nav-header{
 	}
 	
 	.nav-header .nav-links ul {
-		line-height: 90px;
+		line-height: 100px;
 	}
 	
 	.banner {
@@ -279,11 +281,11 @@ header .nav-header{
 
 @media screen and (max-height: 640px) {
 	.nav-header .nav-links{
-		height: 100vh;
+		height: cacl(100vh - 70px);
 	}
 
 	.nav-header .nav-links ul {
-		line-height: 100%;
+		line-height: 85%;
 	}
 	
 	.banner {
