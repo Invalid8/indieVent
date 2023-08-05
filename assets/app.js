@@ -1,7 +1,29 @@
+//{theme: "dark", themeCode: 135}
+//{theme: "light", themeCode: 122}
+
 window.addEventListener('DOMContentLoaded', ()=>{
+	document.body.style.display = "block";
+	let theme = getThemeFromLS();
 	let menuBtn = document.getElementById('menu-btn');
 	let navHeader = document.getElementById('nav-header'); 
 	let navLinksBox = document.getElementById('nav-links-box');
+	let themeBtn = document.getElementById("theme-btn");
+	
+	console.log(theme.themeCode)
+	
+	if (theme.themeCode === 122) {
+		document.body.classList.remove('dark-theme');
+		themeBtn.textContent = "light mode";
+		themeBtn.dataset.theme = "light";
+		themeBtn.classList.remove("dark");
+	} else if (theme.themeCode === 135) {
+		document.body.classList.add('dark-theme');
+		themeBtn.textContent = "dark mode";
+		themeBtn.dataset.theme = "dark";
+		themeBtn.classList.add("dark");
+	} else {
+		document.body.innerHTML = "<h1>ERROR</h1>"
+	}
 	
 	window.addEventListener('scroll', ()=>{
 		let position = window.screenTop;
@@ -19,20 +41,21 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		document.body.classList.toggle("disable-scroll");
 	})
 	
-	let themeBtn = document.getElementById("theme-btn");
-	
 	themeBtn.addEventListener('click', ()=>{
 		if (themeBtn.dataset.theme === "light") {
 			document.body.classList.add('dark-theme');
 			themeBtn.textContent = "dark mode";
 			themeBtn.dataset.theme = "dark";
 			themeBtn.classList.add("dark");
+			updateTheme({theme: "dark", themeCode: 135});
+			
 		} else if (themeBtn.dataset.theme === "dark") {
 			document.body.classList.remove('dark-theme');
 			themeBtn.textContent = "light mode";
 			themeBtn.dataset.theme = "light";
 			themeBtn.classList.remove("dark");
-		}
+			updateTheme({theme: "light", themeCode: 122});
+		} 
 	})
 	
 	let circleBtns = document.querySelectorAll("div.circle-btn");
@@ -79,3 +102,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	}
 })
 
+function getThemeFromLS() {
+	if (!localStorage.getItem("theme")) {
+		localStorage.setItem("theme", JSON.stringify({theme: "light", themeCode: 122}));
+	} 
+	
+	return JSON.parse(localStorage.getItem("theme"));
+}
+
+function updateTheme(theme) {
+	localStorage.setItem("theme", JSON.stringify(theme));
+}
