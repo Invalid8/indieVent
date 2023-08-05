@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto:wght@100&display=swap');
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+	transition: 0.3s ease-in;
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	max-width: 100%;
+	min-width: 270px;
+}
+
+html {
+	scroll-behaviour: smooth;
+}
+
+button {
+	cursor: pointer;
+}
+
+:root {
+	--color1: #d4f0fc;
+	--color2: #89d6fb;
+	--color3: #02a9f7;
+	--color4: #02577a;
+	--color5: #01303f;
+}
+
+/** special class **/
+.special-color{ 
+	color: var(--color4);
+}
+
+.special-bg {
+	background: var(--color4);
+}
+
+.flex-row {
+	display: flex;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.justify-content-SB {
+	justify-content: space-between;
+}
+
+.align-items-C {
+	align-items: center;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.img-contain {
+	object-fit: contain;
+	object-position: center;
+	overflow: hidden;
+}
+
+.img-contain img{
+	width: 100%;
+	object-fit: contain;
+}
+/** END **/
+
+/* Slider */
+.banner .side2{
+	position: relative;
+	overflow: hidden;
+}
+
+.mySlides {
+	display:none;
+}
+
+.w3-left, .w3-right, .w3-badge {
+	cursor:pointer;
+}
+
+.btns-wrap {
+	justify-content: center;
+	gap: 2%;
+}
+
+.w3-badge, div.circle-btn {
+	height: 20px;
+	width:20px;
+	padding:0;
+}
+
+.sidex .control {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 100%;
+	padding: 0 10px;
+	translate: 0 -50%;
+}
+
+.sidex div.move-btn {
+	font-size: 30px;
+	text-shadow: 0 0 5px #000;
+	font-weight: bold;
+	color: #fff;
+}
+
+.sidex div.circle-btn {
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+}
+/* END */
+
+/** MAIN STYLE **/
+.nav-header {
+	height: 70px;
+	padding: 20px 30px;
+	width: 100%;
+}
+
+header .nav-header{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.nav-header .logo {
+	text-transform: uppercase;
+	font-size: calc(14.5px + 1.25vmax);
+	font-weight: 900;
+}
+
+.menu-btn-box .menu-btn {
+	background-color: var(--color4);
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	border: none;
+	text-transform: uppercase;
+}
+
+.nav-header .nav-links li a {
+	color: var(--color4);
+	text-transform: uppercase;
+	font-size: calc(8px + 0.5vamx);
+}
+
+.nav-header .nav-links li a.active{
+	font-weight: 900;
+}
+
+.nav-header .nav-links li a:hover {
+	font-weight: 900;
+}
+
+.banner {
+	padding: 20px calc(10px + 5%);
+	height: 100vh;
+	gap: 3.1%;
+	background-image: url("image/bg1.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.banner .side1, .banner .side2 {
+	flex-basis: 48.45%;
+}
+
+.banner .side1 {
+	gap: 13.333px;
+}
+
+.banner .side1 p:nth-child(1) {
+	text-transform: capitalize;
+	font-weight: 300;
+}
+
+.banner .side1 h1 {
+	font-weight: 100;
+	line-height: 36px;
+}
+
+.banner .side1 button {
+	width: fit-content;
+	padding: 10px 22px;
+	background: var(--color4);
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	text-transform: uppercase;
+}
+
+.banner .side2 img{ 
+	border-radius: 8px;
+}
+
+/** END **/
+
+/** MEDIA SCREEN **/
+
+@media screen and (min-width: 680px) {
+	.menu-btn-box {
+		opacity: o%;
+		display: none;
+	}
+	
+	.nav-header .nav-links li {
+		display: inline-block;
+	}
+	
+	.nav-header .nav-links li:not(:last-child) {
+		margin-right: calc(8px + 1.5vmax);
+	}
+}
+
+@media screen and (max-width: 681px) {
+	.nav-header {
+		position: relative;
+	}
+	
+	.nav-header .nav-links{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 60px;
+		height: auto;
+		background: #fff;
+		text-align: center;
+		
+		overflow: hidden;
+		padding: 0;
+		height: 0;
+		transition: 0.3s ease-in;
+		box-shadow: 0 0 2px #000;
+		
+		background-image: url("image/bg1.png");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	
+	.nav-header .nav-links.show-links{
+		transition: 0.5s ease-out;
+		padding: 10px;
+		height: fit-content;
+		overflow: visible;
+	}
+	
+	.nav-header .nav-links ul {
+		line-height: 30px;
+	}
+	
+	.banner {
+		flex-direction: column;
+		justify-content: center;
+		gap: 30px;
+	}
+	
+	.banner .side1, .banner .side2 {
+		flex-basis: auto;
+	}
+}
+
+@media screen and (max-height: 640px) {
+	.banner {
+		min-height: calc(600px + 20vmax);
+		background: red;
+	}
+}
+
+/** END **/
