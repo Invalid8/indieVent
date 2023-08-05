@@ -192,6 +192,7 @@ header .nav-header{
 .nav-header .nav-links .other .theme-btn.dark{
 	background-color: #fff;
 	color: var(--color5);
+	border-color: #fff;
 }
 
 .banner {
@@ -269,7 +270,7 @@ body.dark-theme .nav-header .nav-links a {
 	.other {
 		position: absolute;
 		top: 70px;
-		right: 0;
+		right: 10px;
 	}
 }
 
@@ -292,8 +293,8 @@ body.dark-theme .nav-header .nav-links a {
 		text-align: center;
 		
 		display: flex;
-		justify-content: space-between;
 		flex-direction: column;
+		gap: 20px;
 		
 		overflow: hidden;
 		padding: 0;
@@ -316,7 +317,7 @@ body.dark-theme .nav-header .nav-links a {
 		padding: 10px;
 		height: calc(100vh - 70px);
 		/* max-height: fit-content; */
-		overflow: hidden auto;
+		overflow: hidden scroll;
 	}
 	
 	.dark-theme .nav-header.cover-header {
