@@ -1,15 +1,32 @@
 window.addEventListener('DOMContentLoaded', ()=>{
 	let menuBtn = document.getElementById('menu-btn');
+	let navHeader = document.getElementById('nav-header'); 
 	let navLinksBox = document.getElementById('nav-links-box');
 	
 	menuBtn.addEventListener('click', ()=>{
 		navLinksBox.classList.toggle("show-links");
-		console.log("clicked");
+		navHeader.classList.toggle("cover-header");
+		document.body.classList.toggle("disable-scroll");
+	})
+	
+	let themeBtn = document.getElementById("theme-btn");
+	
+	themeBtn.addEventListener('click', ()=>{
+		if (themeBtn.dataset.theme === "light") {
+			document.body.classList.add('dark-theme');
+			themeBtn.textContent = "dark mode";
+			themeBtn.dataset.theme = "dark";
+			themeBtn.classList.add("dark");
+		} else if (themeBtn.dataset.theme === "dark") {
+			document.body.classList.remove('dark-theme');
+			themeBtn.textContent = "light mode";
+			themeBtn.dataset.theme = "light";
+			themeBtn.classList.remove("dark");
+		}
 	})
 	
 	let circleBtns = document.querySelectorAll("div.circle-btn");
 	let moveBtns = document.querySelectorAll("div.move-btn");
-	console.log(moveBtns);
 	
 	circleBtns.forEach((cBtn, index)=>{
 		cBtn.addEventListener('click', ()=>{
