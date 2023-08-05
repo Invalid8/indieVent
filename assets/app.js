@@ -3,6 +3,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	let navHeader = document.getElementById('nav-header'); 
 	let navLinksBox = document.getElementById('nav-links-box');
 	
+	window.addEventListener('scroll', ()=>{
+		let position = window.screenTop;
+		
+		if (position > navHeader.getBoundingClientRect().height) {
+			navHeader.classList.add("cover-header");
+		} else {
+			navHeader.classList.remove("cover-header");
+		}
+	}, { passive: true })
+	
 	menuBtn.addEventListener('click', ()=>{
 		navLinksBox.classList.toggle("show-links");
 		navHeader.classList.toggle("cover-header");
