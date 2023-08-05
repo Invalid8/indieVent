@@ -280,7 +280,6 @@ header .nav-header{
 @media screen and (max-height: 640px) {
 	.banner {
 		min-height: calc(600px + 20vmax);
-		background: red;
 	}
 }
 
