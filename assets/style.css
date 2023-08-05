@@ -261,11 +261,12 @@ header .nav-header{
 		transition: 0.5s ease-out;
 		padding: 10px;
 		height: fit-content;
+		max-height: fit-content;
 		overflow: visible;
 	}
 	
 	.nav-header .nav-links ul {
-		line-height: 100px;
+		line-height: 250px;
 	}
 	
 	.banner {
@@ -285,7 +286,7 @@ header .nav-header{
 	}
 
 	.nav-header .nav-links ul {
-		line-height: 85%;
+		line-height: cacl(85% - 70px);
 	}
 	
 	.banner {
