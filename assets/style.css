@@ -238,6 +238,18 @@ header .nav-header{
 	z-index: 100;
 }
 
+.fullpage {
+	min-height: 100vh;
+}
+
+.fullpage:nth-child(2n) {
+	background-color: #02577a;
+}
+
+.temp1 {
+	
+}
+
 /** END **/
 
 /* THEME */
@@ -255,7 +267,7 @@ body.dark-theme .nav-header .nav-links a {
 
 @media screen and (min-width: 680px) {
 	.menu-btn-box {
-		opacity: o%;
+		opacity: 0%;
 		display: none;
 	}
 	
