@@ -246,8 +246,8 @@ header .nav-header{
 	background-color: #02577a;
 }
 
-.temp1 {
-	
+.temp1 img{
+	max-width: 800px;
 }
 
 /** END **/
