@@ -9,8 +9,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	let navLinksBox = document.getElementById('nav-links-box');
 	let themeBtn = document.getElementById("theme-btn");
 	
-	console.log(theme.themeCode)
-	
 	if (theme.themeCode === 122) {
 		document.body.classList.remove('dark-theme');
 		themeBtn.textContent = "light mode";
@@ -25,15 +23,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		document.body.innerHTML = "<h1>ERROR</h1>"
 	}
 	
-	window.addEventListener('scroll', ()=>{
-		let position = window.screenTop;
-		
-		if (position > navHeader.getBoundingClientRect().height) {
+	window.addEventListener("scroll", (event) => {
+		let position = window.scrollY;
+		if (position >= navHeader.getBoundingClientRect().height) {
 			navHeader.classList.add("cover-header");
 		} else {
 			navHeader.classList.remove("cover-header");
 		}
-	}, { passive: true })
+	})
 	
 	menuBtn.addEventListener('click', ()=>{
 		navLinksBox.classList.toggle("show-links");
